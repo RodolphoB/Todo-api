@@ -28,5 +28,5 @@ Projeto desenvolvido como avaliação da disciplina de Programação Web.
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
-cd seu-repo
+git clone https://github.com/RodolphoB/Todo-api.git
+cd Todo-api
