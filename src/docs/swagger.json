@@ -1,0 +1,26 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API de Tarefas",
+    "version": "1.0.0",
+    "description": "API simples para gerenciar tarefas com autenticação JWT"
+  },
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "summary": "Registrar um novo usuário",
+        "responses": {
+          "201": { "description": "Usuário criado com sucesso" }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "Fazer login e obter token JWT",
+        "responses": {
+          "200": { "description": "Login realizado com sucesso" }
+        }
+      }
+    }
+  }
+}
