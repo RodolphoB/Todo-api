@@ -8,7 +8,11 @@ exports.register = async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({ username, password: hashedPassword });
-    res.status(201).json({ message: 'Usuário criado com sucesso', user });
+
+    // Gerar token JWT após criação do usuário
+    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+
+    res.status(201).json({ message: 'Usuário criado com sucesso', user, token });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
